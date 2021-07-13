@@ -72,7 +72,7 @@ function disconnect() {
 function send() {
     const name = $("#name").val();
     const content = $("#content").val();
-    stompClient.send("/app/chat/"+ currentRoom, {}, JSON.stringify({name, content}));
+    stompClient.send("/app/chat", {}, JSON.stringify({currentRoom, name, content}));
 
     $("#content").val("");
 }
